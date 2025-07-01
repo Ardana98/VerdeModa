@@ -1,0 +1,74 @@
+// Componentes: Botones
+// Metodología: BEM (Block, Element, Modifier)
+// =====================================
+
+.button {
+    // Estilos base para el bloque 'button'
+    display: inline-block; // Para que ocupe solo el espacio de su contenido
+    padding: $spacing-medium $spacing-large; // Usa variables de espaciado
+    border: none;
+    border-radius: 5px; // Bordes ligeramente redondeados
+    cursor: pointer;
+    font-size: $font-size-base;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none; // Asegura que los 'a' se vean como botones
+    transition: background-color 0.3s ease, color 0.3s ease; // Transición suave para hover
+
+    // Estilos para el estado hover/focus
+    &:hover,
+    &:focus {
+        outline: none; // Elimina el contorno por defecto al enfocar
+        // El color de fondo y texto cambiarán en los modificadores
+    }
+
+    // Estilos para el estado activo (cuando se presiona)
+    &:active {
+        transform: translateY(1px); // Efecto de "presionado"
+    }
+
+    // Modificadores del bloque 'button'
+
+    // Botón Primario (color principal de la marca)
+    &--primary {
+        background-color: $color-primary; // Verde principal
+        color: $color-white;
+
+        &:hover,
+        &:focus {
+            background-color: darken($color-primary, 10%); // Oscurece el color primario en hover
+        }
+    }
+
+    // Botón Secundario (color de acento o de contraste)
+    &--secondary {
+        background-color: $color-secondary; // Amarillo/Naranja de acento
+        color: $color-dark; // Texto oscuro para contraste con el amarillo
+
+        &:hover,
+        &:focus {
+            background-color: darken($color-secondary, 10%); // Oscurece el color secundario
+        }
+    }
+
+    // Botón de WhatsApp (específico)
+    &--whatsapp {
+        background-color: #25D366; // Verde WhatsApp
+        color: $color-white;
+        display: flex; // Para alinear el texto y posible icono
+        align-items: center;
+        justify-content: center;
+        gap: $spacing-small; // Espacio entre texto e icono 
+
+        &:hover,
+        &:focus {
+            background-color: darken(#25D366, 10%);
+        }
+    }
+
+    // Otros posibles modificadores (ej: tamaño, borde)
+    // &--large {
+    //     padding: $spacing-large $spacing-large * 1.5;
+    //     font-size: $font-size-h3;
+    // }
+}
