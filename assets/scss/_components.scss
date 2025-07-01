@@ -115,3 +115,78 @@
         margin-top: auto; // Empuja el botón hacia abajo si el contenido varía de altura
     }
 }
+// =====================================
+// Componentes: Modal (Ficha de Producto)
+// =====================================
+
+.modal {
+    display: none; /* Oculto por defecto */
+    position: fixed; /* Fijo en la ventana de visualización */
+    z-index: 1000; /* Asegura que esté por encima de todo lo demás */
+    left: 0;
+    top: 0;
+    right: 0;    
+    bottom: 0; 
+    width: 100vw;   /* <--- ¡Añade esta línea! */
+    height: 100vh;  /* <--- ¡Añade esta línea! */ 
+    overflow: auto; /* Permite scroll si el contenido es demasiado largo */
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro semitransparente */
+    /*
+    Cuando se muestre con JS, cambia display a 'flex'
+    Para una transición suave, se puede añadir:
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    */
+
+    &__content {
+        background-color: $color-white;
+        margin: auto;
+        padding: $spacing-large;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        width: 90%; /* Ancho del modal */
+        max-width: 600px; /* Ancho máximo para el modal */
+        position: relative; /* Para posicionar el botón de cierre */
+        /*
+        Para una transición de entrada:
+        transform: translateY(-50px);
+        transition: transform 0.3s ease-in-out;
+        */
+    }
+
+    &__close-button {
+        color: $color-dark;
+        font-size: 2em;
+        font-weight: bold;
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        cursor: pointer;
+        &:hover,
+        &:focus {
+            color: $color-primary;
+        }
+    }
+
+    &__body {
+        text-align: center;
+    }
+
+    &__image {
+        max-width: 80%; /* Imagen más pequeña dentro del modal */
+        height: auto;
+        border-radius: 5px;
+        margin: $spacing-medium auto; /* Centra la imagen y da margen */
+    }
+
+    &__description,
+    &__sizes {
+        font-size: 1.1em;
+        margin-bottom: $spacing-small;
+        color: $color-text;
+    }
+
+    .button--primary { /* El botón de WhatsApp dentro del modal */
+        margin-top: $spacing-medium;
+    }
+}
