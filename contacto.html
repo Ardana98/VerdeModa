@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - VerdeModa</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="header__logo">
+            <img src="assets/img/logo-verdemoda.png" alt="VerdeModa Logo">
+        </div>
+        <nav class="header__nav">
+            <ul class="header__nav-list">
+                <li class="header__nav-item"><a href="index.html" class="header__nav-link">Home</a></li>
+                <li class="header__nav-item"><a href="index.html#productos" class="header__nav-link">Catálogo</a></li>
+                <li class="header__nav-item"><a href="contacto.html" class="header__nav-link">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="contact-section">
+            <h1 class="contact-section__title">¡Ponte en Contacto con VerdeModa!</h1>
+            <p class="contact-section__description">Tenemos varias formas en las que puedes contactarnos para tus consultas, sugerencias o pedidos.</p>
+
+            <div class="contact-section__options">
+                <div class="contact-card">
+                    <h2 class="contact-card__title">Consulta General</h2>
+                    <p class="contact-card__text">Si tienes preguntas sobre nuestros productos o envíos, por favor, llena el siguiente formulario y te responderemos a la brevedad.</p>
+                    <form class="contact-form">
+                        <div class="contact-form__group">
+                            <label for="name" class="contact-form__label">Tu Nombre:</label>
+                            <input type="text" id="name" name="name" class="contact-form__input" required>
+                        </div>
+                        <div class="contact-form__group">
+                            <label for="email" class="contact-form__label">Tu Email:</label>
+                            <input type="email" id="email" name="email" class="contact-form__input" required>
+                        </div>
+                        <div class="contact-form__group">
+                            <label for="message" class="contact-form__label">Tu Mensaje:</label>
+                            <textarea id="message" name="message" rows="5" class="contact-form__textarea" required></textarea>
+                        </div>
+                        <button type="submit" class="contact-form__button button button--primary">Enviar Mensaje</button>
+                    </form>
+                </div>
+
+                <div class="contact-card">
+                    <h2 class="contact-card__title">¡Contáctanos por WhatsApp!</h2>
+                    <p class="contact-card__text">Para pedidos personalizados, consultas urgentes o una atención más directa, puedes contactarnos a través de WhatsApp.</p>
+                    <a href="https://wa.me/XXXXXXXXXXX" target="_blank" class="button button--whatsapp">Enviar WhatsApp</a>
+                    <p class="contact-card__note">Reemplaza XXXXXXXXXXX con el número de teléfono.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 VerdeModa. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/contacto.js"></script>
+</body>
+</html>

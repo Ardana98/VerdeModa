@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VerdeModa - Ropa Sustentable</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="header__logo">
+            <img src="assets/img/logo-verdemoda.png" alt="VerdeModa Logo">
+        </div>
+        <nav class="header__nav">
+            <ul class="header__nav-list">
+                <li class="header__nav-item"><a href="index.html" class="header__nav-link">Home</a></li>
+                <li class="header__nav-item"><a href="#productos" class="header__nav-link">Catálogo</a></li>
+                <li class="header__nav-item"><a href="contacto.html" class="header__nav-link">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero__content">
+                <h1 class="hero__title">VerdeModa</h1>
+                <p class="hero__slogan">Viste tus valores, redefine tu estilo.</p>
+                <a href="#productos" class="hero__button button button--primary">Explora el Catálogo</a>
+            </div>
+        </section>
+
+        <section id="productos" class="products">
+            <h2 class="products__title">Nuestros Productos Destacados</h2>
+            <div class="products__grid">
+                <div class="product-card">
+                    <img src="assets/img/producto-camiseta.jpg" alt="Camiseta de algodón orgánico" class="product-card__image">
+                    <h3 class="product-card__name">Camiseta Algodón Orgánico</h3>
+                    <p class="product-card__price">$19.990</p>
+                    <button class="product-card__button button button--secondary" data-product-id="1">Ver Detalle</button>
+                </div>
+                <div class="product-card">
+                    <img src="assets/img/producto-pantalon.jpg" alt="Pantalón de lino" class="product-card__image">
+                    <h3 class="product-card__name">Pantalón de Lino Fresco</h3>
+                    <p class="product-card__price">$34.990</p>
+                    <button class="product-card__button button button--secondary" data-product-id="2">Ver Detalle</button>
+                </div>
+                </div>
+        </section>
+
+        <div id="productModal" class="modal">
+            <div class="modal__content">
+                <span class="modal__close-button">&times;</span>
+                <div class="modal__body">
+                    <h2>Nombre del Producto</h2>
+                    <img src="" alt="Imagen del producto" class="modal__image">
+                    <p class="modal__description">Descripción detallada del producto.</p>
+                    <p class="modal__sizes">Tallas disponibles: S, M, L, XL</p>
+                    <button class="button button--primary">Contactar por WhatsApp</button>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 VerdeModa. Todos los derechos reservados.</p>
+        </footer>
+
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/modal.js"></script>
+</body>
+</html>
+```

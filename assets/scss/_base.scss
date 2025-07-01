@@ -1,0 +1,26 @@
+    // Reset básico
+    *, *::before, *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-family: $font-primary; // Usando la variable de tipografía
+        font-size: $font-size-base;
+        line-height: 1.6;
+        color: $color-text;
+        background-color: $color-light; // Usando la variable de color
+    }
+
+    a {
+        text-decoration: none;
+        color: $color-primary;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+        display: block; // Elimina el espacio extra debajo de las imágenes
+    }
+    

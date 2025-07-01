@@ -1,0 +1,11 @@
+// 1. Archivo de variables (colores, tipografía, etc.)
+@import "variables";
+
+// 2. Estilos base (reset, estilos para body, html)
+@import "base";
+
+// 3. Layout (estilos para header, main, footer, secciones principales)
+@import "layout";
+
+// 4. Componentes (estilos modulares para botones, tarjetas de producto, navegación, modal)
+@import "components";
