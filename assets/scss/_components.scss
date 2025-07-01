@@ -72,3 +72,46 @@
     //     font-size: $font-size-h3;
     // }
 }
+
+// Componentes: Tarjeta de Producto
+// =====================================
+.product-card {
+    // Estilos generales del bloque product-card
+    background-color: $color-white; // Fondo blanco para la tarjeta
+    border-radius: 8px; // Bordes redondeados
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Sombra suave
+    padding: $spacing-medium; // Espaciado interno
+    text-align: center;
+    display: flex; // flexbox para organizar el contenido interno
+    flex-direction: column; // Los elementos se apilan en el eje y
+    justify-content: space-between; // Espacia los elementos verticalmente, los últimos se empujan hacia abajo
+    align-items: center; // Centra los elementos horizontalmente
+
+    // Elementos del bloque product-card
+    &__image {
+        width: 100%; // La imagen ocupa todo el ancho de la tarjeta
+        height: 200px; // Altura fija para las imágenes
+        object-fit: cover; // Para que las imágenes cubran el área sin distorsionarse
+        border-radius: 4px; // Bordes ligeramente redondeados para la imagen
+        margin-bottom: $spacing-small;
+    }
+
+    &__name {
+        font-size: $font-size-h3; // Un poco más grande para el nombre
+        color: $color-dark;
+        margin-bottom: $spacing-small;
+    }
+
+    &__price {
+        font-size: $font-size-h2; // Precio más destacado
+        color: $color-primary; // Color principal para el precio
+        font-weight: bold;
+        margin-bottom: $spacing-medium;
+    }
+
+    &__button {
+        // el botón ocupa el ancho completo disponible en la tarjeta
+        width: 100%;
+        margin-top: auto; // Empuja el botón hacia abajo si el contenido varía de altura
+    }
+}
