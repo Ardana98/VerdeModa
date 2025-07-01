@@ -1,0 +1,122 @@
+// Contenedor principal que centra el contenido
+.container {
+    max-width: 1200px; // Ancho máximo del contenido
+    margin: 0 auto; // Centra el contenedor horizontalmente
+    padding: 0 $spacing-medium; // Padding a los lados para pantallas pequeñas
+}
+
+// HEADER
+.header {
+    background-color: $color-white;
+    padding: $spacing-medium 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    display: flex; // Usamos Flexbox para alinear elementos en el header
+    justify-content: space-between; // Espacio entre logo y nav
+    align-items: center; // Centra verticalmente logo y nav
+    flex-wrap: wrap; // Permite que los elementos se envuelvan en pantallas pequeñas
+
+    &__logo img {
+        height: 50px; // Tamaño del logo
+    }
+
+    &__nav-list {
+        list-style: none; // Elimina los puntos de la lista
+        display: flex; // Los elementos de la lista se alinean horizontalmente
+        gap: $spacing-large; // Espacio entre los elementos del menú
+    }
+
+    &__nav-link {
+        font-weight: bold;
+        color: $color-dark; // Color de texto para los enlaces de navegación
+        &:hover {
+            color: $color-primary; // Cambio de color al pasar el ratón
+        }
+    }
+
+    // Responsividad del Header y Nav
+    @media (max-width: 768px) {
+        flex-direction: column; // En pantallas pequeñas, apila logo y nav
+        padding: $spacing-medium;
+        text-align: center;
+
+        &__nav {
+            margin-top: $spacing-medium;
+            width: 100%; // Ocupa todo el ancho disponible
+        }
+        &__nav-list {
+            flex-direction: column; // Los enlaces de navegación se apilan verticalmente
+            gap: $spacing-small;
+        }
+    }
+}
+
+// HERO SECTION
+.hero {
+    background-color: $color-primary; // Fondo verde
+    color: $color-white;
+    text-align: center;
+    padding: $spacing-large * 3 $spacing-medium; // Gran padding para un look imponente
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px; // Altura mínima para la sección
+    // Puedes añadir una imagen de fondo aquí si lo deseas
+    // background-image: url('../img/hero-background.jpg');
+    // background-size: cover;
+    // background-position: center;
+
+    &__content {
+        max-width: 800px;
+    }
+
+    &__title {
+        font-size: $font-size-h1 * 1.5; // Título grande
+        margin-bottom: $spacing-medium;
+        line-height: 1.2;
+
+        @media (max-width: 768px) {
+            font-size: $font-size-h1; // Reducir en móvil
+        }
+    }
+
+    &__slogan {
+        font-size: $font-size-h2; // Eslogan visible
+        margin-bottom: $spacing-large;
+
+        @media (max-width: 768px) {
+            font-size: $font-size-h3; // Reducir en móvil
+        }
+    }
+}
+
+// PRODUCTS SECTION (Catálogo destacado)
+.products {
+    padding: $spacing-large 0;
+    text-align: center; // Centrar el título de la sección
+
+    &__title {
+        font-size: $font-size-h1;
+        color: $color-dark;
+        margin-bottom: $spacing-large * 1.5;
+    }
+
+    &__grid {
+        display: grid; // Usamos CSS Grid para el layout de las tarjetas
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); // Columnas autoajustables
+        gap: $spacing-large; // Espacio entre las tarjetas
+        margin: 0 $spacing-medium; // Asegura padding en los bordes
+
+        @media (max-width: 600px) {
+            grid-template-columns: 1fr; // Una columna en pantallas muy pequeñas
+        }
+    }
+}
+
+// FOOTER
+.footer {
+    background-color: $color-dark; // Fondo oscuro
+    color: $color-white;
+    padding: $spacing-medium 0;
+    text-align: center;
+    font-size: 0.9em;
+}
