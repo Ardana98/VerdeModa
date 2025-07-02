@@ -5,7 +5,7 @@ VerdeModa es una plataforma web de comercio electrónico (e-commerce) simulada, 
 📁 Estructura de Carpetas
 El proyecto está organizado de manera modular y lógica para facilitar la navegación y el mantenimiento del código:
 
-.
+```.
 ├── assets/
 │   ├── css/          # Archivos CSS compilados (generados por Sass)
 │   │   └── style.css
@@ -27,7 +27,7 @@ El proyecto está organizado de manera modular y lógica para facilitar la naveg
 │       ├── _layout.scss      # Estructura y diseño de secciones principales (header, hero, footer)
 │       └── style.scss        # Archivo principal de Sass que importa todos los demás
 ├── index.html        # Página principal del sitio
-└── README.md         # Este archivo de documentación
+└── README.md```        # Este archivo de documentación
 🎨 Paleta de Colores y Estilo
 La selección de colores busca equilibrar la temática de sostenibilidad con un diseño moderno y fresco.
 
