@@ -70,13 +70,13 @@
     // background-color: $color-primary; // Fondo verde - ¡ELIMINADO!
 
     // IMAGEN DE FONDO CON UN OVERLAY DE COLOR
-    background-image: linear-gradient(rgba($color-primary, 0.7), rgba($color-primary, 0.003)), /* Overlay semi-transparente (ajustar 0.7 si quiero más/menos transparencia) */
+    background-image: linear-gradient(rgba($color-primary, 0.5), rgba($color-primary, 0.003)), /* Overlay semi-transparente (ajustar 0.7 si quiero más/menos transparencia) */
                       url('../img/hero.png'); 
     background-size: cover; /* Cubre toda el área sin distorsión */
     background-position: center; /* Centra la imagen */
     background-repeat: no-repeat; /* Evita que la imagen se repita */
 
-    color: $color-white;
+    color: $color-white; // Color de texto para el héroe
     text-align: center;
     padding: $spacing-large * 3 $spacing-medium;
     display: flex;

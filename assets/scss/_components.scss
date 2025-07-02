@@ -31,8 +31,8 @@
 
     // Botón Primario (color principal de la marca)
     &--primary {
-        background-color: $color-primary; // Verde principal
-        color: $color-white;
+        background-color: $color-secondary; // Amarillo/Naranja de acento
+        color: $color-dark;
 
         &:hover,
         &:focus {
@@ -91,7 +91,7 @@
     &__image {
         width: 100%; // La imagen ocupa todo el ancho de la tarjeta
         height: 200px; // Altura fija para las imágenes
-        object-fit: cover; // Para que las imágenes cubran el área sin distorsionarse
+        object-fit: contain; // Para que las imágenes cubran el área sin distorsionarse
         border-radius: 4px; // Bordes ligeramente redondeados para la imagen
         margin-bottom: $spacing-small;
     }
@@ -104,7 +104,7 @@
 
     &__price {
         font-size: $font-size-h2; // Precio más destacado
-        color: $color-primary; // Color principal para el precio
+        color: $color-dark; // Color principal para el precio
         font-weight: bold;
         margin-bottom: $spacing-medium;
     }
@@ -188,5 +188,6 @@
 
     .button--primary { /* El botón de WhatsApp dentro del modal */
         margin-top: $spacing-medium;
+        background-color: $color-primary;
     }
 }
