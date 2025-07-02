@@ -5,12 +5,19 @@
   padding: 0;
 }
 
+html, body {
+  height: 100%;
+}
+
 body {
   font-family: "Arial", sans-serif;
   font-size: 16px;
   line-height: 1.6;
   color: #333;
   background-color: #F8F8F8;
+  display: flex; /* Convierte el body en un contenedor flex */
+  flex-direction: column; /* Apila los elementos hijos (header, main, footer) en una columna */
+  min-height: 100vh; /* Asegura que el body ocupe al menos el 100% del alto del viewport */
 }
 
 a {
@@ -22,6 +29,10 @@ img {
   max-width: 100%;
   height: auto;
   display: block;
+}
+
+main {
+  flex-grow: 1; /* Hace que el elemento <main> crezca y ocupe todo el espacio vertical disponible */
 }
 
 .container {
