@@ -89,7 +89,10 @@ main {
 }
 
 .hero {
-  background-color: #4CAF50;
+  background-image: linear-gradient(rgba(76, 175, 80, 0.7), rgba(76, 175, 80, 0.003)), url("../img/hero.png");
+  background-size: cover; /* Cubre toda el área sin distorsión */
+  background-position: center; /* Centra la imagen */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
   color: #FFF;
   text-align: center;
   padding: 6rem 1rem;
@@ -100,6 +103,8 @@ main {
 }
 .hero__content {
   max-width: 800px;
+  position: relative;
+  z-index: 2;
 }
 .hero__title {
   font-size: 3.75em;
@@ -139,6 +144,24 @@ main {
 @media (max-width: 600px) {
   .products__grid {
     grid-template-columns: 1fr;
+  }
+}
+.products__filters {
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+.products__filters .filter-button.active {
+  background-color: #4CAF50;
+  color: #FFF;
+  border-color: #4CAF50;
+}
+@media (max-width: 600px) {
+  .products__filters {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
   }
 }
 

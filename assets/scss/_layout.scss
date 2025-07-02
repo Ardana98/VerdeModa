@@ -67,39 +67,45 @@
 
 // HERO SECTION
 .hero {
-    background-color: $color-primary; // Fondo verde
+    // background-color: $color-primary; // Fondo verde - ¡ELIMINADO!
+
+    // IMAGEN DE FONDO CON UN OVERLAY DE COLOR
+    background-image: linear-gradient(rgba($color-primary, 0.7), rgba($color-primary, 0.003)), /* Overlay semi-transparente (ajustar 0.7 si quiero más/menos transparencia) */
+                      url('../img/hero.png'); 
+    background-size: cover; /* Cubre toda el área sin distorsión */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+
     color: $color-white;
     text-align: center;
-    padding: $spacing-large * 3 $spacing-medium; // Gran padding para un look imponente
+    padding: $spacing-large * 3 $spacing-medium;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 400px; // Altura mínima para la sección
-    // Puedes añadir una imagen de fondo aquí si lo deseas
-    // background-image: url('../img/hero-background.jpg');
-    // background-size: cover;
-    // background-position: center;
+    min-height: 400px;
 
     &__content {
         max-width: 800px;
+        position: relative; // Para asegurar que esté por encima del fondo/overlay
+        z-index: 2; // Opcional, si tienes problemas de apilamiento con el overlay
     }
 
     &__title {
-        font-size: $font-size-h1 * 1.5; // Título grande
+        font-size: $font-size-h1 * 1.5;
         margin-bottom: $spacing-medium;
         line-height: 1.2;
 
         @media (max-width: 768px) {
-            font-size: $font-size-h1; // Reducir en móvil
+            font-size: $font-size-h1;
         }
     }
 
     &__slogan {
-        font-size: $font-size-h2; // Eslogan visible
+        font-size: $font-size-h2;
         margin-bottom: $spacing-large;
 
         @media (max-width: 768px) {
-            font-size: $font-size-h3; // Reducir en móvil
+            font-size: $font-size-h3;
         }
     }
 }
@@ -123,6 +129,30 @@
 
         @media (max-width: 600px) {
             grid-template-columns: 1fr; // Una columna en pantallas muy pequeñas
+        }
+    }
+
+    // Estilos para los filtros de productos (si ya los habías añadido)
+    &__filters {
+        margin-bottom: $spacing-large; // Espacio debajo de los filtros
+        display: flex;
+        justify-content: center; // Centrar los botones de filtro
+        gap: $spacing-medium; // Espacio entre los botones
+
+        .filter-button {
+            // Reutiliza los estilos de tus botones existentes (button--secondary)
+            // Estilo para el botón activo
+            &.active {
+                background-color: $color-primary;
+                color: $color-white;
+                border-color: $color-primary;
+            }
+        }
+
+        @media (max-width: 600px) {
+            flex-wrap: wrap; // Envuelve los botones si no hay espacio
+            justify-content: center; // Mantenemos centrado en móvil
+            gap: $spacing-small; // Reduce el espacio en pantallas pequeñas
         }
     }
 }
