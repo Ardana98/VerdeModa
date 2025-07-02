@@ -1,3 +1,5 @@
+// assets/scss/_layout.scss
+
 // Contenedor principal que centra el contenido
 .container {
     max-width: 1200px; // Ancho máximo del contenido
@@ -10,10 +12,17 @@
     background-color: $color-white;
     padding: $spacing-medium 0;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-    display: flex; // Usamos Flexbox para alinear elementos en el header
-    justify-content: space-between; // Espacio entre logo y nav
-    align-items: center; // Centra verticalmente logo y nav
-    flex-wrap: wrap; // Permite que los elementos se envuelvan en pantallas pequeñas
+    // NOTA: Las propiedades 'display: flex', 'justify-content', etc.
+    // se han movido AHORA al .container dentro del .header.
+
+    // APLICAR FLEXBOX AL CONTENEDOR DENTRO DEL HEADER PARA ALINEAR LOGO Y NAV
+    .container {
+        display: flex; // Ahora el contenedor será flex
+        justify-content: flex-start; // Alinear elementos al inicio
+        align-items: center; // Y los centrará verticalmente
+        flex-wrap: wrap; // Permite que los elementos se envuelvan en pantallas pequeñas
+        gap: $spacing-large; // Espacio entre el logo y la navegación
+    }
 
     &__logo img {
         height: 50px; // Tamaño del logo
@@ -35,9 +44,15 @@
 
     // Responsividad del Header y Nav
     @media (max-width: 768px) {
-        flex-direction: column; // En pantallas pequeñas, apila logo y nav
         padding: $spacing-medium;
-        text-align: center;
+        text-align: center; // Centrar el texto del header en móvil
+
+        // En pantallas pequeñas, apilar logo y nav dentro del contenedor
+        .container {
+            flex-direction: column; // Apila los elementos (logo y nav) verticalmente
+            align-items: center; // Centra los elementos apilados horizontalmente
+            text-align: center; // Centra el contenido dentro del contenedor
+        }
 
         &__nav {
             margin-top: $spacing-medium;
