@@ -6,8 +6,8 @@
     // Estilos base para el bloque 'button'
     display: inline-block; // Para que ocupe solo el espacio de su contenido
     padding: $spacing-medium $spacing-large; // Usa variables de espaciado
-    border: none;
-    border-radius: 5px; // Bordes ligeramente redondeados
+    border: 1px solid $color-primary;
+    border-radius: 25px; // Bordes ligeramente redondeados
     cursor: pointer;
     font-size: $font-size-base;
     font-weight: bold;
@@ -33,10 +33,12 @@
     &--primary {
         background-color: $color-secondary; // Amarillo/Naranja de acento
         color: $color-dark;
+        border-color: $color-primary;
 
         &:hover,
         &:focus {
             background-color: darken($color-primary, 10%); // Oscurece el color primario en hover
+            border-color: darken($color-primary, 10%);
         }
     }
 
@@ -107,12 +109,14 @@
         color: $color-dark; // Color principal para el precio
         font-weight: bold;
         margin-bottom: $spacing-medium;
+        
     }
 
     &__button {
         // el botón ocupa el ancho completo disponible en la tarjeta
         width: 100%;
-        margin-top: auto; // Empuja el botón hacia abajo si el contenido varía de altura
+        margin-top: auto; 
+
     }
 }
 // =====================================
