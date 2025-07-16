@@ -82,7 +82,7 @@ HTML5: Estructura del contenido.
 
 Sass (SCSS): Preprocesador CSS para estilos modulares y mantenibles.
 
-JavaScript: Para la interactividad del sitio (filtros, modal, etc.).
+JavaScript: Con clases de Bootstrap para la interactividad del sitio (filtros, modal, etc.).
 
 Bootstrap 5.3.7: Framework CSS para el diseño y la responsividad.
 
