@@ -1,113 +1,148 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VerdeModa - Ropa Sustentable</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <title>VerdeModa - Inicio</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
 </head>
-
-<body>
+<body class="d-flex flex-column min-vh-100">
     <header class="header">
-        <div class="container">
-            <div class="header__logo">
-                <img src="assets/img/l.png" alt="VerdeModa Logo">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="./index.html">
+                    <img src="assets/img/l.png" alt="Logo VerdeModa" class="logo" height="40">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="./index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./contacto.html">Contacto</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-            <nav class="header__nav">
-                <ul class="header__nav-list">
-                    <li class="header__nav-item"><a href="index.html" class="header__nav-link">Home</a></li>
-                    <li class="header__nav-item"><a href="#productos" class="header__nav-link">Catálogo</a></li>
-                    <li class="header__nav-item"><a href="contacto.html" class="header__nav-link">Contacto</a></li>
-                </ul>
-            </nav>
-        </div>
+        </nav>
     </header>
+    <section class="hero py-5">
+        <div class="container">
+            <div class="hero__content">
+                <h1 class="hero__title text-center display-1 fw-bold">VerdeModa</h1>
+                <p class="hero__slogan text-center lead mb-4">Viste tus valores, redefine tu estilo.</p>
+                <a href="#productos" class="hero__button btn btn-primary">Explora el Catálogo</a>
+            </div>
+        </div>
+    </section>
 
-    <main>
-        <section class="hero">
-            <div class="container">
-                <div class="hero__content">
-                    <h1 class="hero__title">VerdeModa</h1>
-                    <p class="hero__slogan">Viste tus valores, redefine tu estilo.</p>
-                    <a href="#productos" class="hero__button button button--primary">Explora el Catálogo</a>
+    <main class="container main-wrapper flex-grow-1 my-5 border border-secondary p-4">
+        <section class="text-center mb-5">
+            <h1>Bienvenido a VerdeModa</h1>
+            <p class="lead">Tu tienda online de ropa sostenible y accesorios ecológicos.</p>
+        </section>
+
+        <section id="productos" class="mb-5">
+            <h2 class="text-center mb-4">Nuestros Productos</h2>
+            <div class="d-flex justify-content-center mb-4">
+                <button class="btn btn-outline-primary mx-2 filter-button active" data-filter="all">Todo</button>
+                <button class="btn btn-outline-primary mx-2 filter-button" data-filter="vestuario">Vestuario</button>
+                <button class="btn btn-outline-primary mx-2 filter-button" data-filter="accesorios">Accesorios</button>
+            </div>
+
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4" id="products-grid">
+                <div class="col product-card" data-category="vestuario">
+                    <div class="card h-100 d-flex flex-column">
+                        <img src="./assets/img/camiseta.png" class="card-img-top product-card__image" alt="Camiseta Sostenible">
+                        <div class="card-body text-center d-flex flex-column flex-grow-1">
+                            <h5 class="card-title product-card__name">Camiseta de Algodón Orgánico</h5>
+                            <p class="card-text product-card__price">$25.000</p>
+                            <button class="btn btn-primary mt-auto" data-bs-toggle="modal" data-bs-target="#productModal">Ver Detalle</button>
+                        </div>
+                    </div>
                 </div>
+
+                <div class="col product-card" data-category="accesorios">
+                    <div class="card h-100 d-flex flex-column">
+                        <img src="./assets/img/bolso.png" class="card-img-top product-card__image" alt="Bolso de Material Reciclado">
+                        <div class="card-body text-center d-flex flex-column flex-grow-1">
+                            <h5 class="card-title product-card__name">Bolso de Material Reciclado</h5>
+                            <p class="card-text product-card__price">$15.000</p>
+                            <button class="btn btn-primary mt-auto" data-bs-toggle="modal" data-bs-target="#productModal">Ver Detalle</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col product-card" data-category="vestuario">
+                    <div class="card h-100 d-flex flex-column">
+                        <img src="./assets/img/lino.png" class="card-img-top product-card__image" alt="Pantalon de Lino">
+                        <div class="card-body text-center d-flex flex-column flex-grow-1">
+                            <h5 class="card-title product-card__name">Pantalon de Lino</h5>
+                            <p class="card-text product-card__price">$45.000</p>
+                            <button class="btn btn-primary mt-auto" data-bs-toggle="modal" data-bs-target="#productModal">Ver Detalle</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col product-card" data-category="vestuario">
+                    <div class="card h-100 d-flex flex-column">
+                        <img src="./assets/img/vestido.png" class="card-img-top product-card__image" alt="Vestido de Verano Orgánico">
+                        <div class="card-body text-center d-flex flex-column flex-grow-1">
+                            <h5 class="card-title product-card__name">Vestido de Verano Orgánico</h5>
+                            <p class="card-text product-card__price">$45.000</p>
+                            <button class="btn btn-primary mt-auto" data-bs-toggle="modal" data-bs-target="#productModal">Ver Detalle</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col product-card" data-category="accesorios">
+                    <div class="card h-100 d-flex flex-column">
+                        <img src="./assets/img/collar.png" class="card-img-top product-card__image" alt="Collar Artesanal 'vida'">
+                        <div class="card-body text-center d-flex flex-column flex-grow-1">
+                            <h5 class="card-title product-card__name">Collar Artesanal 'vida'</h5>
+                            <p class="card-text product-card__price">$18.000</p>
+                            <button class="btn btn-primary mt-auto" data-bs-toggle="modal" data-bs-target="#productModal">Ver Detalle</button>
+                        </div>
+                    </div>
+                </div>
+                
+                
             </div>
         </section>
 
-        <section id="productos" class="products">
-            <div class="container">
-                <h2 class="products__title">Nuestros Productos Destacados</h2>
-                <div class="products__filters">
-                    <button class="button button--secondary filter-button active" data-filter="all">Todos</button>
-                    <button class="button button--secondary filter-button" data-filter="vestuario">Vestuario</button>
-                    <button class="button button--secondary filter-button" data-filter="accesorios">Accesorios</button>
-                </div>
-                <div class="products__grid">
-                    <div class="product-card" data-category="vestuario">
-                        <img src="assets/img/camiseta.png" alt="Camiseta de algodón orgánico"
-                            class="product-card__image">
-                        <h3 class="product-card__name">Camiseta Algodón Orgánico</h3>
-                        <p class="product-card__price">$19.990</p>
-                        <button class="product-card__button button button--secondary" data-product-id="1">Ver
-                            Detalle</button>
+        <div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="productModalLabel">Detalles del Producto</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <div class="product-card" data-category="vestuario">
-                        <img src="assets/img/lino.png" alt="Pantalón de lino" class="product-card__image">
-                        <h3 class="product-card__name">Pantalón de Lino Fresco</h3>
-                        <p class="product-card__price">$34.990</p>
-                        <button class="product-card__button button button--secondary" data-product-id="2">Ver
-                            Detalle</button>
+                    <div class="modal-body text-center">
+                        <img src="" class="img-fluid mb-3 d-block mx-auto" id="modalImage" alt="Imagen del Producto">
+                        <h4 id="modalTitle"></h4>
+                        <p class="h5" id="modalPrice"></p>
+                        <p id="modalDescription" class="mt-3"></p>
+                        <p class="text-muted"><small id="modalSizes"></small></p>
                     </div>
-                    <div class="product-card" data-category="vestuario">
-                        <img src="assets/img/vestido.png" alt="Vestido de verano orgánico"
-                            class="product-card__image">
-                        <h3 class="product-card__name">Vestido de Verano Orgánico</h3>
-                        <p class="product-card__price">$29.990</p>
-                        <button class="product-card__button button button--secondary" data-product-id="3">Ver
-                            Detalle</button>
-                    </div>
-                    <div class="product-card" data-category="accesorios">
-                        <img src="assets/img/bolso.png" alt="Bolso de material reciclado"
-                            class="product-card__image">
-                        <h3 class="product-card__name">Bolso Ecológico Urbano</h3>
-                        <p class="product-card__price">$45.000</p>
-                        <button class="product-card__button button button--secondary" data-product-id="4">Ver
-                            Detalle</button>
-                    </div>
-                    <div class="product-card" data-category="accesorios">
-                        <img src="assets/img/collar.png" alt="Collar artesanal" class="product-card__image">
-                        <h3 class="product-card__name">Collar Artesanal "Vida"</h3>
-                        <p class="product-card__price">$12.500</p>
-                        <button class="product-card__button button button--secondary" data-product-id="5">Ver
-                            Detalle</button>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        <button type="button" class="btn btn-primary">Añadir al Carro</button>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <div id="productModal" class="modal">
-            <div class="modal__content">
-                <span class="modal__close-button">&times;</span>
-                <div class="modal__body">
-                    <h2>Nombre del Producto</h2>
-                    <img src="" alt="Imagen del producto" class="modal__image">
-                    <p class="modal__description">Descripción detallada del producto.</p>
-                    <p class="modal__sizes">Tallas disponibles: S, M, L, XL</p>
-                    <a href="contacto.html" class="button button--primary modal__whatsapp-button" target="_blank" rel="noopener noreferrer">Contactar por WhatsApp</a>
-            </div>
-
         </div>
     </main>
 
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2025 VerdeModa. Todos los derechos reservados.</p>
+    <footer class="footer mt-auto py-3">
+        <div class="container text-center">
+            <p class="mb-0">&copy; 2025 VerdeModa. Todos los derechos reservados.</p>
         </div>
     </footer>
-    <script src="assets/js/main.js"></script>
-    <script src="assets/js/modal.js"></script>
-    <script src="assets/js/contacto.js"></script>
-</body>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/contacto.js"></script>
+
+</body>
 </html>

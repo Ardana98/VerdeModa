@@ -1,0 +1,23 @@
+{
+  "name": "verdemoda",
+  "version": "1.0.0",
+  "description": "Proyecto: VerdeModa 🌿🛍️ # Descripción General del Proyecto",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ardana98/VerdeModa.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ardana98/VerdeModa/issues"
+  },
+  "homepage": "https://github.com/Ardana98/VerdeModa#readme",
+  "dependencies": {
+    "bootstrap": "^5.3.7"
+  }
+}

@@ -1,103 +1,41 @@
 // assets/scss/_layout.scss
 
-// Contenedor principal que centra el contenido
-@import 'variables';
+@use 'variables' as *;
 
-
-
-.container {
-    width: 80vw;
-    max-width: 1200px; // Ancho máximo del contenido
-    margin: 0 auto; // Centra el contenedor horizontalmente
-    border: 1px solid $color-border-light-gray; // Borde ligero para el contenedor
-    padding: 20px; // Padding a los lados para pantallas pequeñas
-    // background-color: $color-gray;
-
-    // Responsividad: Ajustar padding en pantallas más pequeñas si es necesario
-    @media (max-width: $breakpoint-medium) { // Asumiendo $breakpoint-medium en _variables.scss es 768px
-        padding: 15px; // Reduce el padding para espacios más cómodos en móviles/tabletas
-        
-    }
-
-
+// 1. Contenedor principal
+// Creamos una clase personalizada para cumplir con el requerimiento de la actividad.
+.main-wrapper {
+    width: 80%;
+    max-width: 1200px;
+    
 }
 
-// HEADER
+// 2. Estilos del HEADER
+// La clase 'header' no es de Bootstrap, la usamos para estilizar el contenedor.
 .header {
-    // Estilos base del header
-    background-color: $color-header-bg; // Usando nueva variable de color
-    padding: 10px; // Requerimiento: Padding de 10px para el header completo
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); 
-
-    // Estilos del contenedor interno del header para alinear logo y nav
-   
-    .container {
-        display: flex;
-        justify-content: space-between; // Ajustado de flex-start para separar logo y nav
-        align-items: center;
-        flex-wrap: wrap; // Permite que los elementos se envuelvan en pantallas pequeñas
-
-        // Responsividad específica para el .container dentro del header
-        // Esta media query maneja cómo el logo y la nav se apilan en pantallas pequeñas
-        @media (max-width: $breakpoint-medium) { // Uso variable $breakpoint-medium (asumiendo 768px)
-            flex-direction: column; // Apila los elementos (logo y nav) verticalmente
-            align-items: center;    // Centra los elementos apilados horizontalmente
-            // text-align: center;  // Esto generalmente no es necesario aquí si uso align-items: center
-            padding: 0 10px;        // Ajusta el padding lateral del container interno en móvil
-            gap: $spacing-medium;   // Espacio entre logo y nav cuando están apilados
-        }
+    background-color: $color-header-bg;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+.navbar {
+    background-color:$color-primary; 
+    .navbar-brand, .nav-link {
+        color:$color-white; 
     }
 
-    // Estilos del logo (elementos del header)
-    &__logo img {
-        height: 50px; // Tamaño del logo
+    // Agrega esta línea para controlar el tamaño del logo
+    .logo {
+        height: 60px; 
     }
-
-    // Estilos de la navegación (elementos del header)
-    &__nav {
-        // En pantallas pequeñas, la nav ocupa todo el ancho disponible si se apila
-        @media (max-width: $breakpoint-medium) {
-            margin-top: $spacing-medium; // Margen superior para separar del logo
-            width: 100%; // Ocupa todo el ancho disponible
-        }
-    }
-
-    // Estilos de la lista de navegación
-    &__nav-list {
-        list-style: none;
-        display: flex;
-        gap: $spacing-large; // Espacio entre los elementos del menú
-
-        // Responsividad para la lista de navegación
-        @media (max-width: $breakpoint-medium) {
-            flex-direction: column; // Los enlaces de navegación se apilan verticalmente
-            gap: $spacing-small; // Reduce el espacio entre enlaces en móvil
-        }
-    }
-
-    // Estilos de los enlaces de navegación
-    &__nav-link {
-        font-weight: bold;
-        color: $color-dark;
-        &:hover {
-            color: $color-primary;
-        }
-    }
-
 }
 
 // HERO SECTION
 .hero {
-    // background-color: $color-primary; // Fondo verde - ¡ELIMINADO!
-
-    // IMAGEN DE FONDO CON UN OVERLAY DE COLOR
-    background-image: linear-gradient(rgba($color-primary, 0.5), rgba($color-primary, 0.003)), /* Overlay semi-transparente (ajustar 0.7 si quiero más/menos transparencia) */
-                      url('../img/hero.png'); 
-    background-size: cover; /* Cubre toda el área sin distorsión */
-    background-position: center; /* Centra la imagen */
-    background-repeat: no-repeat; /* Evita que la imagen se repita */
-
-    color: $color-white; 
+    background-image: linear-gradient(rgba($color-primary, 0.5), rgba($color-primary, 0.003)),
+                      url('../img/hero.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: $color-white;
     text-align: center;
     padding: $spacing-large * 3 $spacing-medium;
     display: flex;
@@ -107,12 +45,13 @@
 
     &__content {
         max-width: 800px;
-        position: relative; // Para asegurar que esté por encima del fondo/overlay
-        z-index: 2; // Opcional, si tengo problemas de apilamiento con el overlay
+        position: relative;
+        z-index: 2;
         display: flex;
         flex-direction: column;
         align-items: center;
         margin: 0 auto;
+        text-align: center;
     }
 
     &__title {
@@ -120,88 +59,43 @@
         margin-bottom: $spacing-medium;
         line-height: 1.2;
 
-        @media (max-width: $breakpoint-medium) {
-            font-size: $font-size-h1;
-        }
+        
+       
     }
 
     &__slogan {
         font-size: $font-size-h2;
         margin-bottom: $spacing-large;
 
-        @media (max-width: $breakpoint-medium) {
-            font-size: $font-size-h3;
-        }
+        
+        
     }
 }
 
-// PRODUCTS SECTION (Catálogo destacado)
-.products {
-    padding: $spacing-large 0;
-    text-align: center; // Centrar el título de la sección
 
-    &__title {
-        font-size: $font-size-h1;
-        color: $color-dark;
-        margin-bottom: $spacing-large * 1.5;
-    }
 
-    &__grid {
-        display: grid; //  Grid para el layout de las tarjetas
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); // Columnas autoajustables
-        gap: $spacing-large; // Espacio entre las tarjetas
-        margin: 0 $spacing-medium; // Asegura padding en los bordes
 
-        @media (max-width: $breakpoint-medium) {
-            grid-template-columns: 1fr; // Una columna en pantallas muy pequeñas
-            gap: $spacing-medium; // Reduce el espacio entre tarjetas en móvil
-            margin: 0 $spacing-small; // Reduce el margen lateral del grid en móvil
-        }
-    }
 
-    // Estilos para los filtros de productos 
-    &__filters {
-        margin-bottom: $spacing-large; // Espacio debajo de los filtros
-        display: flex;
-        justify-content: center; // Centrar los botones de filtro
-        gap: $spacing-medium; // Espacio entre los botones
 
-        .filter-button {
-            // Reutiliza los estilos de tus botones existentes (button--secondary)
-            // Estilo para el botón activo
-            &.active {
-                background-color: $color-primary;
-                color: $color-white;
-                border-color: $color-primary;
-            }
-        }
-
-        @media (max-width: $breakpoint-medium) {
-            flex-wrap: wrap; // Envuelve los botones si no hay espacio
-            justify-content: center; // Mantenemos centrado en móvil
-            gap: $spacing-small; // Reduce el espacio en pantallas pequeñas
-            margin-bottom: $spacing-medium; // Ajusta el margen inferior
-        }
+// 3. Estilos de la sección de productos
+// Aquí estilizamos los elementos que no son componentes de Bootstrap, como los botones de filtro.
+.filter-button {
+    &.active {
+        background-color: var(--bs-primary);
+        color: var(--bs-white);
+        border-color: var(--bs-primary);
     }
 }
 
-// FOOTER
+// 4. Estilos del FOOTER
+// La clase 'footer' no es de Bootstrap, la estilizamos aquí.
 .footer {
-     // Requerimiento: Height de 100px
-    height: 100px;
-    // Requerimiento: Padding de 20px
-    padding: 20px; // Directamente 20px, el requerimiento es fijo
-    // Requerimiento: Background-color que contraste
-    background-color: $color-footer-bg; // Fondo oscuro
+    padding-top: $spacing-medium;
+    padding-bottom: $spacing-medium;
+    background-color: $color-footer-bg;
     color: $color-white;
     text-align: center;
     font-size: 0.9em;
-    // Requerimiento: Margin-top de 50px
-    margin-top: 50px;
-    // Responsividad para el footer
-    @media (max-width: $breakpoint-medium) {
-        height: auto; // Deja que la altura se ajuste al contenido si el padding cambia
-        padding: 15px; // Reduce el padding para pantallas más pequeñas
-        margin-top: 30px; // Reduce el margen superior en móvil
-    }
+
+   
 }

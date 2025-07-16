@@ -1,11 +1,25 @@
-// 1. Archivo de variables (colores, tipografía, etc.)
-@import "variables";
+// assets/scss/style.scss
 
-// 2. Estilos base (reset, estilos para body, html)
-@import "base";
+// 1. Importación de variables personales.
+// Al principio para que Bootstrap pueda usarlas.
+@use "variables" as *;
 
-// 3. Layout (estilos para header, main, footer, secciones principales)
-@import "layout";
+// 2. Carga el archivo principal de Bootstrap y sobrescribe las variables.
+// La directiva `with` se encarga de pasarle mis variables a Bootstrap.
+@use "bootstrap/scss/bootstrap" with (
+  $primary: $color-primary,
+  $secondary: $color-secondary,
+  
+  $dark: $color-dark,
+  $light: $color-light,
+  $font-family-base: $font-primary,
+  $h1-font-size: $font-size-h1,
+  $h2-font-size: $font-size-h2,
+  $h3-font-size: $font-size-h3
+);
 
-// 4. Componentes (estilos modulares para botones, tarjetas de producto, navegación, modal)
-@import "components";
+// 3. Importa estilos base, layout y componentes.
+// Estos archivos usarán las variables que ya he definido.
+@use "base";
+@use "layout";
+@use "components";

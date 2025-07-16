@@ -1,0 +1,36 @@
+// assets/scss/_custom.scss
+
+@use 'variables' as *;
+
+//// Estilos personalizados para los botones de Bootstrap
+
+.btn-primary {
+    border-radius: 25px; 
+    
+    &:hover,
+    &:focus {
+        background-color: mix($primary, #000, 80%);
+        border-color: mix($primary, #000, 80%);
+    }
+}
+// Estilos del Modal
+
+.modal-content {
+  border-radius: 0.5rem;
+  .modal-header {
+    background-color: variables.$color-secondary;
+    .modal-title { 
+      color: variables.$color-white;
+    }
+  }
+  .btn-close {
+    filter: invert(1);
+  }
+}
+
+// Responsividad extra (por si necesito ajustar el modal en pantallas pequeñas)
+@media (max-width: variables.$breakpoint-medium) {
+  .modal-dialog { 
+    max-width: 90%; 
+  }
+} 

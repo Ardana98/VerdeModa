@@ -1,5 +1,5 @@
 
-
+@use 'variables' as *; // Importa las variables de colores y tipografía
 // Reset básico y box-sizing global
 *, *::before, *::after {
     box-sizing: border-box;

@@ -1,103 +1,89 @@
 Proyecto: VerdeModa 🌿🛍️
 # Descripción General del Proyecto
+VerdeModa es una plataforma web de comercio electrónico (e-commerce) simulada. El objetivo principal es ofrecer una experiencia de usuario intuitiva y visualmente atractiva.
 
-VerdeModa es una plataforma web de comercio electrónico (e-commerce) simulada, diseñada para showcasing productos de moda sostenible y ecológica. El objetivo principal es ofrecer una experiencia de usuario intuitiva y visualmente atractiva, destacando el compromiso con la sostenibilidad a través de su diseño y funcionalidad.
-
-En esta versión del proyecto, el enfoque se ha centrado en la implementación de un diseño basado en el modelo de cajas (box model) de CSS, ajustando los elementos de la interfaz para que se adapten de forma correcta y responsiva a diferentes tamaños de pantalla, siguiendo un prototipo de diseño específico.
+En esta nueva versión, el proyecto ha sido migrado y reconstruido utilizando Bootstrap 5.3.7. Esto ha permitido crear una interfaz moderna y completamente responsiva, aprovechando los componentes y las utilidades del framework para asegurar que el diseño se adapte de forma correcta a cualquier dispositivo.
 
 # Estructura de Carpetas
-
-El proyecto está organizado de manera modular y lógica para facilitar la navegación y el mantenimiento del código. En esta rama, los archivos Sass (.scss) han sido actualizados para reflejar los nuevos requerimientos de diseño.
-
-```Fragmento de código
+```
 ├── assets/
 │   ├── css/          # Archivos CSS compilados (generados por Sass)
 │   │   └── style.css
 │   ├── img/          # Imágenes del proyecto (logo, hero, productos, etc.)
 │   ├── js/           # Archivos JavaScript
 │   └── scss/         # Archivos fuente de Sass (pre-procesador CSS)
-│       ├── _variables.scss      # Variables de configuración (colores, fuentes, espaciados, breakpoints)
-│       ├── _base.scss        # Estilos base y resets
-│       ├── _components.scss  # Estilos para componentes reutilizables (botones, tarjetas)
-│       ├── _layout.scss      # Estructura y diseño de secciones principales (header, hero, footer)
-│       └── style.scss        # Archivo principal de Sass que importa todos los demás
-├── index.html        # Página principal del sitio
-└── README.md        # Este archivo de documentación
+│       ├── _variables.scss          # Variables de configuración del proyecto
+│       ├── _base.scss               # Estilos base y resets
+│       ├── _components.scss         
+│       ├── _layout.scss             
+│       ├── _bootstrap-custom.scss   # Archivo para sobrescribir variables de Bootstrap
+│       └── style.scss               # Archivo principal de Sass que importa todos los demás
 ```
+
 
 # Paleta de Colores y Estilo
 
-La selección de colores busca equilibrar la temática de sostenibilidad con un diseño moderno y fresco.
+La paleta de colores de la marca se ha mantenido y se ha integrado directamente en Bootstrap mediante Sass. Esto asegura una coherencia total en todos los componentes del framework.
 
 Verde Principal ($color-primary): Representa la naturaleza y la sostenibilidad.
 
-Color Secundario ($color-secondary): Un tono beige/gris cálido (#F5DEB3) que proporciona un contraste suave.
+Color Secundario ($color-secondary): Un tono gris cálido que proporciona un contraste suave.
 
-Tonos Oscuros ($color-dark): Para texto principal y fondo del footer, asegurando legibilidad.
+Tonos Oscuros ($color-dark): Para texto principal, asegurando legibilidad.
 
 Blanco ($color-white): Para fondos limpios y texto sobre colores oscuros.
 
-Los colores de fondo para el header ($color-header-bg) y el footer ($color-footer-bg) han sido definidos específicamente para cumplir con los requerimientos de contraste del nuevo diseño.
-
 # Características Principales
+Las funcionalidades del sitio se mantienen, pero su presentación visual ha sido mejorada gracias a los componentes de Bootstrap:
 
-Las funcionalidades principales del sitio se mantienen, pero su presentación visual ha sido completamente ajustada a las especificaciones del prototipo:
-
-Catálogo de Productos: Presentación de productos en una grilla adaptable.
+Catálogo de Productos: Presentación de productos en una grilla adaptable y responsiva.
 
 Filtros por Categoría: Mejora la navegación del usuario.
 
 Detalle de Producto (Modal): Muestra información ampliada de forma interactiva.
 
-Botón de Contacto: Facilita la comunicación con los usuarios.
+Diseño Responsivo: Se ha implementado de manera nativa utilizando las clases de Bootstrap.
 
-Diseño Responsivo: Se ha implementado una estrategia de diseño responsivo robusta, ajustando el modelo de cajas en diferentes tamaños de pantalla.
+# Implementación de Requerimientos con Bootstrap
+Los requerimientos de diseño han sido implementados utilizando las clases y componentes de Bootstrap 5.3.7.
 
-# Implementación de Requerimientos (Box Model)
+1. **Contenedor Principal**
 
-Para esta tarea, se han aplicado las siguientes especificaciones de diseño:
+El contenedor principal utiliza la clase .container de Bootstrap para centrar el contenido. El espaciado vertical se maneja con la utilidad my-5 y el padding interno con p-4. Para el ancho del 80% y los estilos de borde, se ha combinado una clase Sass (.main-wrapper) con las utilidades de Bootstrap border y border-secondary.
 
-## 1-Caja del Contenedor Principal:
+2. **Navbar (Barra de Navegación)**
 
-El contenedor principal (.container) **ocupa el 80% del ancho del viewport (80vw), centrado con **margin: 0 auto;**.
+La barra de navegación fue construida con el componente navbar de Bootstrap. La responsividad para dispositivos móviles se logra automáticamente con el uso del navbar-toggler y la clase navbar-expand-lg, que colapsa el menú en pantallas más pequeñas.
 
-Se ha añadido un **borde de 1px ($color-border-light-gray) y un padding de 20px** para separar el contenido de los bordes.
+3. **Sección de Contenido Principal (Grilla)**
 
-## 2- Header:
+Para la sección de productos, se utilizó el sistema de grillas de Bootstrap. La estructura se basa en las clases .row y .col. La responsividad se maneja con las clases row-cols-1 row-cols-md-2 row-cols-lg-3, que ajustan el número de columnas de forma dinámica.
 
-Se ha definido con un **padding de 10px** en todos los lados, asegurando un espacio uniforme para su contenido.
+4. **Footer**
 
-Su fondo de **color ($color-header-bg)** se extiende a lo largo de todo el ancho de la pantalla, mientras que su contenido se mantiene dentro de un **.container**.
+El pie de página es un bloque simple que utiliza las utilidades de Bootstrap para su espaciado y alineación. La clase py-3 le da padding vertical, text-center centra el texto y mt-auto lo posiciona en la parte inferior de la página.
 
-## 3- Footer:
+5. **Responsividad**
 
-Es un contenedor con una **altura fija de 100px**.
+La responsividad del proyecto se logra principalmente a través del sistema de grillas y las clases de utilidad de Bootstrap. Ya no se utilizan media queries de Sass para ajustar el layout, lo que hace el código más limpio y escalable. Los estilos visuales únicos se siguen definiendo en Sass, complementando al framework.
 
-Tiene un **padding de 20px y un background-color ($color-footer-bg) que contrasta con el header**.
+6. **Uso de Sass para Modularización y Personalización**
 
-Se ha añadido un **margin-top de 50px para separarlo claramente del contenido principal**.
+El proyecto utiliza Sass* para una gestión de estilos más eficiente y modular, trabajando en conjunto con Bootstrap para una personalización completa.
 
-## 4- Botones:
+#### Variables Globales: Se ha definido una paleta de colores, fuentes y tamaños en el archivo _variables.scss. Estas variables no solo se usan en el código propio del proyecto, sino que también se aplican a todo el framework de Bootstrap.
 
-Utilizan el modelo de cajas con **padding interno y un border definido**.
+####  Personalización de Bootstrap: En el archivo principal style.scss, se utiliza la regla @use para cargar los estilos de Bootstrap, sobrescribiendo sus variables por defecto con las variables del proyecto. Esto asegura una coherencia total en la tipografía y los colores de todos los componentes.
 
-Se utiliza **gap** en los contenedores flex para mantener una separación consistente entre ellos.
-
-Las esquinas se han **redondeado con border-radius**, y se ha agregado un **efecto hover** para una mejor interacción.
-
-## 5- Responsividad:
-
-Se han utilizado media queries (@media) para ajustar el modelo de cajas en pantallas más pequeñas.
-
-El padding y el margin de secciones clave como el header, footer y la grilla de productos se reducen para optimizar el espacio en dispositivos móviles.
-
-El layout de las grillas (grid-template-columns) y los flexbox (flex-direction) se han adaptado para apilar los elementos verticalmente cuando es necesario.
+#### Estilos Adicionales: Se han creado archivos Sass específicos para personalizar el diseño de componentes de Bootstrap sin afectar la flexibilidad del framework. Por ejemplo, en _components.scss, se agregan estilos para elementos como las tarjetas de producto, mientras que en _custom.scss, se personalizan los estilos de componentes existentes (como border-radius y efectos hover en los botones). Esta separación mantiene el código limpio, escalable y fácil de mantener.
 
 # Tecnologías Utilizadas
-
 HTML5: Estructura del contenido.
 
 Sass (SCSS): Preprocesador CSS para estilos modulares y mantenibles.
 
 JavaScript: Para la interactividad del sitio (filtros, modal, etc.).
+
+Bootstrap 5.3.7: Framework CSS para el diseño y la responsividad.
+
 
