@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
             event.preventDefault();
             event.stopPropagation();
         } else {
-            // Si es válido, puedes simular el envío
+            // Si es válido, se puede simular el envío
             event.preventDefault();
             alert('¡Mensaje enviado con éxito! Nos pondremos en contacto contigo pronto.');
             form.reset();

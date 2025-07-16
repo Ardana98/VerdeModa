@@ -3,7 +3,7 @@
 @use 'variables' as *;
 
 // 1. Contenedor principal
-// Creamos una clase personalizada para cumplir con el requerimiento de la actividad.
+// Clase personalizada para cumplir con el requerimiento de la actividad.
 .main-wrapper {
     width: 80%;
     max-width: 1200px;
@@ -11,7 +11,6 @@
 }
 
 // 2. Estilos del HEADER
-// La clase 'header' no es de Bootstrap, la usamos para estilizar el contenedor.
 .header {
     background-color: $color-header-bg;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
@@ -22,7 +21,7 @@
         color:$color-white; 
     }
 
-    // Agrega esta línea para controlar el tamaño del logo
+    // Para controlar el tamaño del logo
     .logo {
         height: 60px; 
     }
@@ -78,7 +77,7 @@
 
 
 // 3. Estilos de la sección de productos
-// Aquí estilizamos los elementos que no son componentes de Bootstrap, como los botones de filtro.
+
 .filter-button {
     &.active {
         background-color: var(--bs-primary);
@@ -88,7 +87,7 @@
 }
 
 // 4. Estilos del FOOTER
-// La clase 'footer' no es de Bootstrap, la estilizamos aquí.
+// La clase 'footer' no es propia de Bootstrap, por eso la utilizo aquí.
 .footer {
     padding-top: $spacing-medium;
     padding-bottom: $spacing-medium;

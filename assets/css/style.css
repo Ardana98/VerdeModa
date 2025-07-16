@@ -11970,7 +11970,7 @@ main {
   border-radius: 25px;
   /* &:hover,
   &:focus {
-      // Aquí es donde debes cambiar el código
+      // Aquí es donde debo cambiar el código
       background-color: darken($primary, 10%);
       border-color: darken($primary, 10%);
   } */
@@ -11980,10 +11980,6 @@ main {
   background-color: #25D366;
   color: #fff;
   border-radius: 25px;
-  /* &:hover,
-  &:focus {
-      background-color: darken(#25D366, 10%);
-  } */
 }
 
 /*# sourceMappingURL=style.css.map */

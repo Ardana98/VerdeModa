@@ -46,20 +46,16 @@
     
     /* &:hover,
     &:focus {
-        // Aquí es donde debes cambiar el código
+        // Aquí es donde debo cambiar el código
         background-color: darken($primary, 10%);
         border-color: darken($primary, 10%);
     } */
 }
 
-// Estilos para el botón de WhatsApp (si lo agregas en el HTML)
+// Estilos para el botón de WhatsApp (si se agrega en el HTML)
 .btn-whatsapp {
     background-color: #25D366;
     color: #fff;
     border-radius: 25px;
-    
-    /* &:hover,
-    &:focus {
-        background-color: darken(#25D366, 10%);
-    } */
+   
 }
